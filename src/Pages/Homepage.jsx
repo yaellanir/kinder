@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 
 function Homepage({ user, setLoggingIn, checkLoggedStatus }) {
-  const [showLogInMsg, setShowLogInMsg] = useState(false);
+  // const [showLogInMsg, setShowLogInMsg] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -26,57 +26,50 @@ function Homepage({ user, setLoggingIn, checkLoggedStatus }) {
         the globe
       </h3> */}
       </div>
-      {showLogInMsg ? (
-        <div className="overlay">
-          <div className="popup">
-            <h3>Please Log In Or Register...</h3>
+
+      <div className="bottom-section flex">
+        <div className="balloon-wrap1">
+          <div
+            className="small-display-area balloon1"
+            onClick={(e) => {
+              if (!checkLoggedStatus()) {
+                return;
+              }
+              navigate("/swipe");
+            }}
+          >
+            swipe
           </div>
         </div>
-      ) : (
-        <div className="bottom-section flex">
-          <div className="balloon-wrap1">
-            <div
-              className="small-display-area balloon1"
-              onClick={(e) => {
-                if (!checkLoggedStatus()) {
-                  return;
-                }
-                navigate("/swipe");
-              }}
-            >
-              swipe
-            </div>
-          </div>
 
-          <div className="balloon-wrap2">
-            <div
-              className="small-display-area balloon2"
-              onClick={(e) => {
-                if (!checkLoggedStatus()) {
-                  return;
-                }
-                navigate("/events");
-              }}
-            >
-              events
-            </div>
-          </div>
-
-          <div className="balloon-wrap3">
-            <div
-              className="small-display-area balloon3"
-              onClick={(e) => {
-                if (!checkLoggedStatus()) {
-                  return;
-                }
-                navigate("/add-event");
-              }}
-            >
-              add-events
-            </div>
+        <div className="balloon-wrap2">
+          <div
+            className="small-display-area balloon2"
+            onClick={(e) => {
+              if (!checkLoggedStatus()) {
+                return;
+              }
+              navigate("/events");
+            }}
+          >
+            events
           </div>
         </div>
-      )}
+
+        <div className="balloon-wrap3">
+          <div
+            className="small-display-area balloon3"
+            onClick={(e) => {
+              if (!checkLoggedStatus()) {
+                return;
+              }
+              navigate("/add-event");
+            }}
+          >
+            add-events
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

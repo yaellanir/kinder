@@ -1,5 +1,5 @@
 import "./SearchBar.css";
-import React, { useState } from "react";
+import React from "react";
 
 function Searchbar({
   onSubmit,
@@ -10,10 +10,6 @@ function Searchbar({
   location,
   setLocation,
 }) {
-
-  const [submit, setSubmit] = useState(false);
-
-
   const timeOptions = [
     { value: "", text: "When?" },
     { value: "today", text: "Today" },
@@ -46,18 +42,15 @@ function Searchbar({
   function handleWhenInput(event) {
     const inputWhen = event.target.value;
     setWhen(inputWhen);
- 
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSubmit(true);
     onSubmit({
       age,
       location,
       when,
     });
-    console.log("form submitted");
   }
 
   return (

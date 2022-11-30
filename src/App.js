@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import {addDoc, collection} from "@firebase/firestore"
 import useFetch from "./hooks/useFetch";
 import { Routes, Route } from "react-router-dom";
@@ -18,7 +18,7 @@ function App() {
   const [loggingIn, setLoggingIn] = useState(false);
   const [registering, setRegistering] = useState(false);
   const [user, setUser] = useState(null);
-  const [data, error, loading] = useFetch(
+  const [data, error] = useFetch(
     "https://6374a94848dfab73a4e4fc2d.mockapi.io/kinder"
   );
   // console.log(data);

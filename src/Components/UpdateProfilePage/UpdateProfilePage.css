@@ -1,15 +1,15 @@
-.profile-container{
+.profile-container {
   background-image: url("../../images/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
+  /* position: fixed; */
   /* top: 0; */
-  min-height: 100%;
+  min-height: calc(100vh - 55px);
   min-width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 
 .file {

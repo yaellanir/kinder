@@ -8,7 +8,6 @@
 .events-container {
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
   min-height: 100%;
   min-width: 100%;
   display: flex;

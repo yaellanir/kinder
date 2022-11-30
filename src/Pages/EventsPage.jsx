@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 import Searchbar from "../Components/Search-Bar/SearchBar";
 import EventCard from "../Components/EventCard/EventCard";
 import axios from "axios";
-import {
-  getLastDayOfMonth,
-  getLastDayOfWeek,
-  isDateInRange,
-  isEventExpired,
-} from "../utils";
+import { isDateInRange, isEventExpired } from "../utils";
 
 import "./EventsPage.css";
 
@@ -21,9 +16,7 @@ function EventsPage({ user, setUser }) {
   const [unexpiredEvents, setUnexpiredEvents] = useState(null);
   const [isJoined, setIsJoined] = useState(false);
 
-  const [data] = useFetch(
-    "https://6374a94848dfab73a4e4fc2d.mockapi.io/events"
-  );
+  const [data] = useFetch("https://6374a94848dfab73a4e4fc2d.mockapi.io/events");
 
   async function joinEvent(eventId) {
     const updatedUser = {
@@ -45,25 +38,23 @@ function EventsPage({ user, setUser }) {
     );
     setUnexpiredEvents(nonExpiredEvents);
     setFilteredEvents(nonExpiredEvents);
-
   }, [data]);
 
   useEffect(() => {
+    function filterSearchedInputs() {
+      if (filteredEvents) {
+        const updatedFilteredData = unexpiredEvents.filter((item) => {
+          return (
+            item.age.includes(age || "") &&
+            item.where.includes(location || "") &&
+            isDateInRange(when || "", item.dateOfEvent)
+          );
+        });
+        setFilteredEvents(updatedFilteredData);
+      }
+    }
     filterSearchedInputs();
   }, [age, location, when]);
-
-  function filterSearchedInputs() {
-    if (filteredEvents) {
-      const updatedFilteredData = unexpiredEvents.filter((item) => {
-        return (
-          item.age.includes(age || "") &&
-          item.where.includes(location || "") &&
-          isDateInRange(when || "", item.dateOfEvent)
-        );
-      });
-      setFilteredEvents(updatedFilteredData);
-    }
-  }
 
   return (
     <div className="events-container">
@@ -77,7 +68,6 @@ function EventsPage({ user, setUser }) {
         setWhen={setWhen}
         location={location}
         setLocation={setLocation}
-        onSubmit={filterSearchedInputs}
       />
       {filteredEvents && (
         <div className="card-map-container flex">

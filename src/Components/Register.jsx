@@ -1,9 +1,8 @@
-import "./Register.css";
-import React, { useState } from "react";
-import "./LogIn.css";
-import useFetch from "../hooks/useFetch";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import "./Register.css";
+import "./LogIn.css";
 // import {addDoc, collection} from "@firebase/firestore"
 
 function Register({ setUser, setLoggingIn, setRegistering }) {
@@ -42,18 +41,22 @@ function Register({ setUser, setLoggingIn, setRegistering }) {
     console.log("user added");
     const userAdded = await axios.post(
       "https://6374a94848dfab73a4e4fc2d.mockapi.io/kinder",
-      { parentName:inputName, childName:inputChildName, email: inputEmail, password: inputPassword }
+      {
+        parentName: inputName,
+        childName: inputChildName,
+        email: inputEmail,
+        password: inputPassword,
+      }
     );
     console.log(userAdded);
     if (userAdded.data) {
-      localStorage.setItem("user", JSON.stringify(userAdded.data))
-      setUser(userAdded.data)
+      localStorage.setItem("user", JSON.stringify(userAdded.data));
+      setUser(userAdded.data);
     }
     setUserRegistered(true);
-    
 
     setTimeout(() => {
-      console.log('message displayed');
+      console.log("message displayed");
       setRegistering(false);
     }, 3500);
   }

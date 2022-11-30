@@ -1,28 +1,27 @@
-.card-container{
+.card-container {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   /* padding:0 50px; */
-  
 }
 
-.card{
-  width:400px;
-  height:650px;
-  gap:10px;
+.card {
+  max-width: 400px;
+  height: 650px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   border: 1px solid;
   margin-top: 40px;
-  padding:0 50px;
+  padding: 0 50px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.name-age{
-  gap:20px;
+.name-age {
+  gap: 20px;
 }
-.swipe-image{
+.swipe-image {
   /* background: url(${user.avatar}) center no-repeat scroll; */
   /* background-size: cover;
   background-repeat: no-repeat;
@@ -31,5 +30,5 @@
   /* max-width: 100%; */
   /* width: 250px; */
   /* margin: 0 auto; */
-  padding-top:10px;
+  padding-top: 10px;
 }

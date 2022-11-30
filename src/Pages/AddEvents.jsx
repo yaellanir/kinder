@@ -42,11 +42,6 @@ function Search({ user }) {
     setDescription(inputDescription);
   }
 
-  function handlePic(event) {
-    console.log(event.target.files[0]);
-    setImgFile(event.target.files[0]);
-  }
-
   async function handleSubmit(event) {
     event.preventDefault();
     const formSubmitted = await axios.post(
@@ -91,51 +86,56 @@ function Search({ user }) {
           </div>
         </div>
       )}
-        <Link to="/">
-          <h4 className="back">Back To Homepage</h4>
-        </Link>
+      <Link to="/">
+        <h4 className="back">Back To Homepage</h4>
+      </Link>
       <div className="add-event-wrap">
         <form onSubmit={(e) => e.preventDefault()} className="form-addEvent">
           <div className="form-container">
             <div>
-            <div className="input-form">
-              <label>What is the event title?</label>
-              <input
-                className="input"
-                type="text"
-                onChange={addEventTitle}
-                placeholder="Title?"
-              />
-            </div>
+              <div className="input-form">
+                <label>What is the event title?</label>
+                <input
+                  className="input"
+                  type="text"
+                  onChange={addEventTitle}
+                  placeholder="Title?"
+                />
+              </div>
 
-            <div className="input-form">
-              <label>Where is your play-date?</label>
-              <input
-                className="input"
-                type="text"
-                onChange={addWhere}
-                placeholder="Where?"
-              />
-            </div>
-            <div className="input-form">
-              <label>When does it take place?</label>
-              <input
-                className="input"
-                type="date"
-                onChange={addWhen}
-                placeholder="When?"
-              />
-            </div>
-            <div className="input-form">
-              <label>Ages?</label>
-              <select className="input" onChange={addAge} name="age" id="when">
-                {ageOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.text}
-                  </option>
-                ))}
-              </select>
-            </div>
+              <div className="input-form">
+                <label>Where is your play-date?</label>
+                <input
+                  className="input"
+                  type="text"
+                  onChange={addWhere}
+                  placeholder="Where?"
+                />
+              </div>
+              <div className="input-form">
+                <label>When does it take place?</label>
+                <input
+                  className="input"
+                  type="date"
+                  onChange={addWhen}
+                  placeholder="When?"
+                />
+              </div>
+              <div className="input-form">
+                <label>Ages?</label>
+                <select
+                  className="input"
+                  onChange={addAge}
+                  name="age"
+                  id="when"
+                >
+                  {ageOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.text}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             <div className="second-part">
@@ -144,12 +144,11 @@ function Search({ user }) {
                 <textarea className="text" onChange={addDescription} />
               </div>
               <div className="submit-flex">
-              <button onClick={handleSubmit} className="btn">
-                Submit
-              </button>
+                <button onClick={handleSubmit} className="btn">
+                  Submit
+                </button>
+              </div>
             </div>
-            </div>
-
           </div>
           {/* <div className="flex"> */}
           {/* <input type="file" onChange={handlePic} /> */}

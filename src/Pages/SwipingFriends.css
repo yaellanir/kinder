@@ -1,8 +1,8 @@
 .swiping-container {
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
-  min-height: 100%;
+  /* position: fixed; */
+  min-height: calc(100vh - 55px);
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,21 +17,17 @@
   margin-bottom: 70px;
 }
 .swipe-btn-container {
-  margin-top: 30px;
-  gap: 100px;
+  /* margin-top: 30px; */
+  gap: 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 400px;
 }
 .card-swipe {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-}
-
-.swipe-btn-container {
-  margin-top: 30px;
-  gap: 100px;
 }
 
 .name-age {
