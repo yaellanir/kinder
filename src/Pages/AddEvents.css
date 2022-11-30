@@ -95,7 +95,6 @@
   padding-top: 30px;
   animation-name: slideUp;
   animation-duration: 2s;
-  animation-delay: 2s;
   animation-timing-function: ease;
 }
 @keyframes slideUp {
