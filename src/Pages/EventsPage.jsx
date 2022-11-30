@@ -55,7 +55,6 @@ function EventsPage({ user, setUser }) {
     }
     filterSearchedInputs();
     //eslint-disable-next-line
-
   }, [age, location, when]);
 
   return (
