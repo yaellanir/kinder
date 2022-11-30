@@ -13,7 +13,7 @@ function Search({ user }) {
   const [when, setWhen] = useState("");
   const [age, setAge] = useState("");
   const [description, setDescription] = useState(false);
-  const [imgFile, setImgFile] = useState("");
+  const [imgFile] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   function addEventTitle(event) {
