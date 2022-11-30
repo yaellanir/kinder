@@ -1,0 +1,18 @@
+.exit-button{
+  border-radius: 50%;
+  width: 30px;
+  height:30px;
+  /* font-weight:bold; */
+  background-color: aquamarine;
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  box-shadow: 2px 5px 10px rgba(33, 53, 45, 0.507);
+  border: none;
+  font-size:16px;
+}
+
+.exit-button:hover {
+  background-color: rgba(127, 255, 212, 0.705);
+  box-shadow: none;
+}

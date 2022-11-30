@@ -1,0 +1,14 @@
+.SearchBar-container {
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 3vw;
+}
+.SearchBar-container select {
+  width: 150px;
+  padding: 5px;
+  margin: 10px 0;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  outline: none;
+  transition: 0.3s;
+}

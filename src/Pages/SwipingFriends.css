@@ -1,0 +1,67 @@
+.swiping-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/background4.jpeg");
+  background-position: center;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.swipe-btn-container {
+  margin-top: 30px;
+  gap: 100px;
+  display: flex;
+  justify-content: center;
+}
+.card-swipe {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.swipe-btn-container {
+  margin-top: 30px;
+  gap: 100px;
+}
+
+.name-age {
+  gap: 20px;
+}
+
+.btn-swipe-left {
+  background-color: rgb(250, 98, 98);
+}
+
+.btn-swipe-left:hover {
+  background-color: rgba(252, 111, 111, 0.678);
+}
+
+.btn-swipe-left:active {
+  background-color: rgba(255, 157, 127, 0.705);
+  /* box-shadow: none; */
+  /* TODO : add sound */
+}
+.btn-swipe-right {
+  background-color: rgb(126, 243, 142);
+}
+
+.btn-swipe-right:active {
+  /* background-color: rgba(127, 255, 212, 0.705); */
+  /* box-shadow: none; */
+  /* TODO : add sound */
+}
+
+.back {
+  margin-left: 55px;
+  margin-top: 20px;
+}
